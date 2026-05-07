@@ -20,7 +20,7 @@ describe("getApiKey", () => {
 
   test("proper format returns second word", () => {
     expect(getAPIKey({
-      authorization: "ApiKeykey"
+      authorization: "ApiKey key"
     })).toEqual("key");
   });
 });
