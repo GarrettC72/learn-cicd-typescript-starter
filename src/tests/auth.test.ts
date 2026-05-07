@@ -7,20 +7,26 @@ describe("getApiKey", () => {
   });
 
   test("single word returns null", () => {
-    expect(getAPIKey({
-      authorization: "ApiKey"
-    })).toBeNull();
+    expect(
+      getAPIKey({
+        authorization: "ApiKey",
+      }),
+    ).toBeNull();
   });
 
   test("missing ApiKey returns null", () => {
-    expect(getAPIKey({
-      authorization: "test key"
-    })).toBeNull();
+    expect(
+      getAPIKey({
+        authorization: "test key",
+      }),
+    ).toBeNull();
   });
 
   test("proper format returns second word", () => {
-    expect(getAPIKey({
-      authorization: "ApiKey key"
-    })).toEqual("key");
+    expect(
+      getAPIKey({
+        authorization: "ApiKey key",
+      }),
+    ).toEqual("key");
   });
 });
